@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>商品详情 </title>
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col menu_fixed">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a class="site_title"><i class="fa fa-paw"></i> <span>喵喵购物</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-edit"></i> 查询 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="title.html">按商品名称查询</a></li>
+                      <li><a href="price.html">按价格区间查询</a></li>
+                      <li><a href="address.html">按商家地址查询</a></li>
+                      <li><a href="genre.html">按商品类别查询</a></li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" ng-app="myApp" ng-controller="siteCtrl">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>商品详情</h3>
+
+              </div>
+
+            </div>
+
+
+            <div class="x_panel">
+              <div class="x_title">
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                  <h3 class="prod_title">商品销量分析</h3>
+                  <div class="btn-group  btn-group-sm select-right">
+                    <button class="btn btn-default" type="button" ng-click="star_0()" >季度</button>
+                    <button class="btn btn-default" type="button" ng-click="star_2()" >月</button>
+                    <button class="btn btn-default" type="button" ng-click="star_1()" >日</button>
+                  </div>
+                  <div class="product-image">
+                    <div id="container_2" style="min-width:400px;height:450px"></div>
+                  </div>
+
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12" style="border:0px solid #e5e5e5;">
+
+                  <h3 class="prod_title">商品ID：{{product_id}}</h3>
+
+                  <h3>商品名称:  {{title}}  </h3>
+
+                  <br/>
+
+                  <h3 class="price">价格：{{price}}   元</h3>
+
+                  <!--<div class="">-->
+                    <!--<div class="product_price">-->
+                      <!---->
+                      <!--<br>-->
+                    <!--</div>-->
+                  <!--</div>-->
+
+
+
+                  <div class="" ng-repeat="l1 in parameter">
+                    <h2>{{l1.title}}</h2>
+                    <ul class="list-inline prod_size">
+                      <li ng-repeat="l2 in l1.detail">
+                        <button type="button" class="btn btn-default btn-xs">{{l2.name}}</button>
+                      </li>
+                    </ul>
+                    <br />
+                  </div>
+                  <br />
+
+
+                </div>
+
+
+                <div class="col-md-12">
+
+                  <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                      <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">商品详情</a>
+                      </li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                      <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                        <table class="table table-striped">
+                          <thead>
+
+                          <tr>
+                            <th>商品类别</th>
+                            <th>售后支持</th>
+                            <th>商家地址</th>
+                            <th>运费</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <th>{{genre}}</th>
+                            <th>{{support}}</th>
+                            <th>{{address}}</th>
+                            <th>{{trans_price}}</th>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            喵喵购物 - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/modules/oldie.js"></script>
+    <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
+    <script src="vendors/angular/angular-route.js"></script>
+    <script src="vendors/angular/angular.js"></script>
+
+    <script>
+        function getQueryStringArgs(){
+            var qs = (location.search.length>0?location.search.substring(1):"");
+            var args = {};
+            var items = qs.length?qs.split("&"):[];
+            var item = null;
+            var name = null;
+            var value = null;
+            len = items.length;
+            for (var i = 0; i < len; i++) {
+                item = items[i].split("=");
+                name = decodeURIComponent(item[0]);
+                value = decodeURIComponent(item[1]);
+                if (name.length) {
+                    args[name] = value;
+                }
+            }
+            return args;
+        }
+        var args = getQueryStringArgs();
+        var product_id = args["id"];
+        //alert(product_id);
+        var app = angular.module('myApp', []);
+        app.controller('siteCtrl', function($scope, $http) {
+            var type=0;
+            $http.get("http://localhost:8080/detail/index?id=" + product_id)
+                .then(function (response) {
+                    $scope.product_id = response.data.data.product_id;
+                    $scope.price = response.data.data.price;
+                    $scope.title = response.data.data.title;
+                    $scope.genre = response.data.data.genre;
+                    $scope.support = response.data.data.guarantee;
+                    $scope.address = response.data.data.address;
+                    $scope.trans_price = response.data.data.express;
+                });
+            //
+            // $http.get("http://localhost:8080/research/personal?code=" + code)
+            //     .then(function (response) {
+            //         $scope.parameter = response.data;
+            //
+            //     });
+
+
+            if(type === 1){
+                $http.get("http://localhost:8080/sales/statistic?type=1&id="+ $scope.product_id)
+                    .then(function (response) {
+                        var data=[];
+                        var categories=[];
+                        var temp = response.data;
+                        for(var i=0;i<temp.length;i++){
+                            data.push(parseInt(String(temp[i])));
+                        }
+                        for(var j=1;j<366;j++){
+                            categories.push(String(j));
+                        }
+                        //$scope.chart(showData);
+                        $scope.chart_day(name,data,categories);
+
+                    });
+            }else if(type === 2){
+                $http.get("http://localhost:8080/sales/statistic?type=2&id="+ $scope.product_id )
+                    .then(function (response) {
+                        var data=[];
+                        var temp = response.data;
+                        for(var i=0;i<temp.length;i++){
+                            data.push(parseInt(String(temp[i])));
+                        }
+                        //$scope.chart(showData);
+                        $scope.chart_month(name,data);
+
+                    });
+            }else if(type === 0){
+                $http.get("http://localhost:8080/sales/statistic?type=3&id="+ $scope.product_id )
+                    .then(function (response){
+                        var data=[];
+                        var temp = response.data;
+                        for(var i=0;i<temp.length;i++){
+                            data.push(parseInt(String(temp[i])));
+                        }
+                        $scope.chart_quarter(name,data);
+
+                    });
+            }
+            $scope.star_0 = function () {
+                type = 0;
+
+            };
+            $scope.star_1 = function () {
+                type = 1;
+
+            };
+            $scope.star_2 = function () {
+                type = 2;
+
+            };
+
+            $scope.chart_day= function (name,data,catergories) {
+                var chart = Highcharts.chart('container', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title:{
+                        text: name+'销量统计'
+                    },
+                    xAxis: {
+                        categories: catergories
+                    },
+                    yAxis: {
+                        title: {
+                            text: '个数'
+                        }
+                    },
+                    plotOptions: {
+                        line: {
+                            dataLabels: {
+                                enabled: true          // 开启数据标签
+                            },
+                            enableMouseTracking: false // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                        }
+                    },
+                    series: [{
+                        name: name,
+                        data: data
+                    }]
+                });
+            };
+
+            $scope.chart_quarter= function (name,data) {
+                var chart = Highcharts.chart('container', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title:{
+                        text: name+'销量统计'
+                    },
+                    xAxis: {
+                        categories: ['一季度','二季度','三季度','四季度']
+                    },
+                    yAxis: {
+                        title: {
+                            text: '个数'
+                        }
+                    },
+                    plotOptions: {
+                        line: {
+                            dataLabels: {
+                                enabled: true          // 开启数据标签
+                            },
+                            enableMouseTracking: false // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                        }
+                    },
+                    series: [{
+                        name: name,
+                        data: data
+                    }]
+                });
+            };
+
+            $scope.chart_month= function (name,data) {
+                var chart = Highcharts.chart('container', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title:{
+                        text: name+'销量统计'
+                    },
+                    xAxis: {
+                        categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                    },
+                    yAxis: {
+                        title: {
+                            text: '个数'
+                        }
+                    },
+                    plotOptions: {
+                        line: {
+                            dataLabels: {
+                                enabled: true          // 开启数据标签
+                            },
+                            enableMouseTracking: false // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                        }
+                    },
+                    series: [{
+                        name: name,
+                        data: data
+                    }]
+                });
+            };
+
+        });
+
+
+    </script>
+
+  </body>
+</html>
