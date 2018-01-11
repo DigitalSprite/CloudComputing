@@ -111,24 +111,35 @@
 
                 </div>
 
-                <div class="col-md-5 col-sm-5 col-xs-12" style="border:0px solid #e5e5e5;">
+                <div class="col-md-5 col-sm-5 col-xs-12">
 
-                  <h3 class="prod_title">商品ID：{{product_id}}</h3>
+                  <section class="panel">
 
-                  <h3>商品名称:  {{title}}  </h3>
+                    <h3 class="prod_title">商品ID：{{product_id}}</h3>
 
-                  <br/>
+                    <h3>商品名称:  {{title}}  </h3>
+                    <br/>
 
-                  <h3 class="price">价格：{{price}}   元</h3>
+                    <!--五条信息-->
+                    <h5>商品类别:  {{genre}}  </h5>
+                    <h5>售后支持:  {{support}}  </h5>
+                    <h5>商家地址:  {{address}}  </h5>
+                    <h5>运费:    {{trans_price}}  </h5>
+                    <!--五条信息-->
 
-                  <!--<div class="">-->
-                    <!--<div class="product_price">-->
-                      <!---->
-                      <!--<br>-->
-                    <!--</div>-->
-                  <!--</div>-->
+                    <br/>
 
+                    <h3 class="price">价格：{{price}}   元</h3>
 
+                    <br/>
+
+                    <div class="text-center">
+
+                      <a class="btn btn-warning btn-block" href="orderdetail.html">购买</a>
+
+                    </div>
+
+                  </section>
 
                   <div class="" ng-repeat="l1 in parameter">
                     <h2>{{l1.title}}</h2>
@@ -141,43 +152,8 @@
                   </div>
                   <br />
 
-
                 </div>
 
-
-                <div class="col-md-12">
-
-                  <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                    <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                      <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">商品详情</a>
-                      </li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content">
-                      <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                        <table class="table table-striped">
-                          <thead>
-
-                          <tr>
-                            <th>商品类别</th>
-                            <th>售后支持</th>
-                            <th>商家地址</th>
-                            <th>运费</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                            <th>{{genre}}</th>
-                            <th>{{support}}</th>
-                            <th>{{address}}</th>
-                            <th>{{trans_price}}</th>
-                          </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
               </div>
             </div>
 

@@ -77,43 +77,50 @@
 
           <div class="title_right">
 
-            <div class="col-md-5 form-group2 pull-right top_search">
-              <form method="get" id="search_form2" >
-
-                <div class="input-group">
-
-                  <input type="text" class="form-control" id="aname2" placeholder="价格下限">
-
-                </div>
-              </form>
-            </div>
-
-            <div class="col-md-5 form-group2 pull-right top_search">
+            <div class="col-md-4 form-group3 pull-right top_search">
               <form method="get" id="search_form3" >
 
                 <div class="input-group">
 
                   <input type="text" class="form-control" id="aname3" placeholder="产品标题">
 
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit" ng-click="form_query()">搜索</button>
+                    </span>
+
                 </div>
               </form>
             </div>
 
-            <div class="col-md-5 form-group2 pull-right top_search">
+
+            <div class="col-md-4 form-group3 pull-right top_search">
               <form method="get" id="search_form" >
 
                 <div class="input-group">
 
                   <input type="text" class="form-control" id="aname" placeholder="价格上限">
 
-                    <span class="input-group-btn">
+                  <span class="input-group-btn">
                       <button class="btn btn-default" type="submit" ng-click="form_query()">搜索</button>
                     </span>
                 </div>
               </form>
             </div>
 
+            <div class="col-md-4 form-group3 pull-right top_search">
+              <form method="get" id="search_form2" >
 
+                <div class="input-group">
+
+                  <input type="text" class="form-control" id="aname2" placeholder="价格下限">
+
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit" ng-click="form_query()">搜索</button>
+                    </span>
+
+                </div>
+              </form>
+            </div>
 
             <div class="clearfix"></div>
           </div>
@@ -121,11 +128,13 @@
 
 
         <div class="row">
-          <div class="x_panel">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>查询结果</h2>
 
-            <div class="x_title">
-              <h2>查询结果</h2>
-              <div class="clearfix"></div>
+                <div class="clearfix"></div>
+              </div>
               <div class="x_content">
                 <table class="table table-striped">
                   <tbody>
@@ -139,7 +148,6 @@
                   </tr>
                   </tbody>
                 </table>
-
               </div>
             </div>
           </div>
